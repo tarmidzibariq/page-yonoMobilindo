@@ -8,3 +8,4 @@ checkbox.addEventListener('change', () => {
     navbarNav.classList.remove('show');
   }
 });
+
