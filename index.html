@@ -61,10 +61,21 @@
       border-bottom: 2px solid var(--primary);
     }
 
-    #navbar .btn-login {
+    .btn-login {
       background-color: var(--primary);
       color: var(--yellow);
       font-weight: bold;
+      border: none;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-login:hover {
+      /* Warna lebih gelap dari primary */
+      background-color: #1f3f6b;
+      /* Warna teks putih */
+      color: #fff;
+      /* Efek bayangan halus */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     #navbar .logo-text {
@@ -152,6 +163,10 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    .modal .form-control {
+      background-color: #eeeeee;
+      border-radius: 5px;
+    }
     #form {
       padding-top: 120px;
     }
@@ -163,7 +178,7 @@
     #testimonial {
       /* margin-top: 50px; */
       /* padding: 100px 0; */
-      background: linear-gradient(to bottom, #fffde0, var(--yellow));
+      background: linear-gradient(to bottom, var(--background), var(--yellow));
     }
 
     #testimonial h5 {
@@ -215,11 +230,40 @@
               <a class="nav-link" href="#">KONTAK</a>
             </li>
           </ul>
-          <a class="btn btn-login px-5" href="#">MASUK</a>
+          <a class="btn btn-login px-5" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">MASUK</a>
         </div>
       </div>
     </nav>
   </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title w-100 text-center" id="loginModalLabel">Masuk</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-medium">Email*</label>
+              <input type="email" class="form-control py-2 border-0" id="email" placeholder="Masukkan Email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label fw-medium">Kata Sandi*</label>
+              <input type="password" class="form-control py-2 border-0" id="password" placeholder="Masukkan Kata Sandi">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label " for="remember">Ingat Saya</label>
+            </div>
+            <button type="submit" class="btn btn-login w-100 mb-2">Masuk</button>
+            <div class="text-center register-link">Belum Mempunyai Akun? <a href="#">Daftar</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <section id="form">
     <div class="container my-5">
@@ -328,7 +372,7 @@
         <!-- Testimonial Card -->
         <div class="col-md-4 col-sm-6">
           <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-            <img src="https://via.placeholder.com/400x250" class="img-fluid" alt="Foto Pelanggan">
+            <img src="Tangkapan Layar 2025-05-20 pukul 16.42.21.png" class="img-fluid" alt="Foto Pelanggan">
             <div class="card-body text-center">
               <h5 class="card-title">Tarmidzi Bariq</h5>
               <div class="mb-2 text-warning">
@@ -349,7 +393,7 @@
         <!-- Duplikat 2 -->
         <div class="col-md-4 col-sm-6">
           <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-            <img src="https://via.placeholder.com/400x250" class="img-fluid" alt="Foto Pelanggan">
+            <img src="Tangkapan Layar 2025-05-20 pukul 16.42.21.png" class="img-fluid" alt="Foto Pelanggan">
             <div class="card-body text-center">
               <h5 class="card-title">Tarmidzi Bariq</h5>
               <div class="mb-2 text-warning">
@@ -370,7 +414,7 @@
         <!-- Duplikat 3 -->
         <div class="col-md-4 col-sm-6">
           <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-            <img src="https://via.placeholder.com/400x250" class="img-fluid" alt="Foto Pelanggan">
+            <img src="Tangkapan Layar 2025-05-20 pukul 16.42.21.png" class="img-fluid" alt="Foto Pelanggan">
             <div class="card-body text-center">
               <h5 class="card-title">Tarmidzi Bariq</h5>
               <div class="mb-2 text-warning">
@@ -405,12 +449,12 @@
   <section id="about">
     <div class="py-5">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-start">
           <!-- Kolom Foto -->
           <div class="col-lg-5 mb-4 mb-lg-0">
-            <div class="border rounded-3 p-5 text-center"
-              style="height: 100%; display: flex; align-items: center; justify-content: center;">
-              <span class="fw-semibold">FOTO SHOWROOM</span>
+            <div class="border rounded-3 overflow-hidden shadow-sm" style="height: 100%; max-height: 350px;">
+              <img src="Tangkapan Layar 2025-05-20 pukul 16.42.21.png" alt="YONOMOBILINDO SHOWROOM"
+                class="img-fluid w-100 h-100 object-fit-cover">
             </div>
           </div>
 
