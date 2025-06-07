@@ -48,7 +48,7 @@
     }
 
     #navbar .navbar-nav .nav-link {
-      font-weight: 700;
+      font-weight: 600;
       color: var(--grey) !important;
       font-size: 16px;
       border-bottom: 2px solid transparent;
@@ -64,7 +64,7 @@
     #navbar .btn-login {
       background-color: var(--primary);
       color: var(--yellow);
-      font-weight: bold;
+      font-weight: 600;
     }
 
     #navbar .logo-text {
@@ -152,18 +152,79 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    #form {
-      padding-top: 120px;
+    #formJualMobil {
+      padding-top: 170px;
     }
 
-    #mobil {
-      margin: 50px 0;
+    #formJualMobil .form-control {
+      background-color: #eeeeee;
+      border-radius: 5px;
+    }
+
+    #formJualMobil .btn-submit {
+      background-color: var(--primary);
+      color: #fcf259;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    #tutorial .border {
+      background-color: var(--background);
+    }
+
+    #tutorial .number {
+      font-size: 48px;
+      color: var(--grey, #867e77);
+      font-weight: 700;
+    }
+
+    #tutorial .step-text {
+      font-size: 16px;
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    #tutorial img.step-icon {
+      width: 70px;
+    }
+
+    @media (max-width: 576px) {
+      #tutorial .number {
+        font-size: 20px;
+      }
+
+      #tutorial .step-text {
+        font-size: 12px;
+        color: var(--black);
+        font-weight: 700;
+      }
+
+      #tutorial img.step-icon {
+        width: 40px;
+      }
+
+      #tutorial .step-text {
+        font-size: 10px;
+      }
+
+      #tutorial .step-header {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+      }
+
+      #tutorial .step-body {
+        padding: 1rem 0.5rem;
+      }
     }
 
     #testimonial {
       /* margin-top: 50px; */
       /* padding: 100px 0; */
-      background: linear-gradient(to bottom, #fffde0, var(--yellow));
+      background: linear-gradient(to bottom, var(--background), var(--yellow));
     }
 
     #testimonial h5 {
@@ -174,10 +235,6 @@
     #footer {
       background-color: #032145;
     }
-
-    /* #reqCar{
-      background-color: #ffffff;
-    } */
   </style>
 </head>
 
@@ -221,107 +278,152 @@
     </nav>
   </section>
 
-  <section id="form">
-    <div class="container my-5">
-      <form>
-        <div class="row g-2 align-items-center">
-          <div class="col-md-9 col-sm-12">
-            <input type="text" class="form-control py-3" placeholder="Cari mobil...">
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <button type="submit" class="btn w-100 py-3"
-              style="background-color: #fff04f; font-weight: bold;">CARI</button>
-          </div>
-        </div>
+  <!-- start formJualMobil -->
+  <section id="formJualMobil">
+    <div class="container">
+      <h3 class="fw-bold mb-5">FORM JUAL MOBIL</h3>
 
-        <div class="row g-2 mt-3">
-          <div class="col-4 col-sm-3">
-            <select class="form-select py-3">
-              <option selected disabled>Brand</option>
-              <option value="toyota">Toyota</option>
-              <option value="honda">Honda</option>
-              <!-- Tambahkan pilihan lainnya -->
-            </select>
-          </div>
-          <div class="col-4 col-sm-3">
-            <select class="form-select py-3">
-              <option selected disabled>Jarak Tempuh</option>
-              <option value="0-5000">0 - 5.000 km</option>
-              <option value="5000-10000">5.000 - 10.000 km</option>
-            </select>
-          </div>
-          <div class="col-4 col-sm-3">
-            <select class="form-select py-3">
-              <option selected disabled>Tahun</option>
-              <option value="2025">2025</option>
-              <option value="2024">2024</option>
-              <!-- Tambahkan tahun lainnya -->
-            </select>
-          </div>
+      <div class="row d-flex align-items-start">
+        <div class="col-md-6 " style="font-size: 20px;">
+          <p class="fw-semibold mb-2">Informasi Mobil</p>
+          <p class="text-muted">Masukkan Spesifikasi Mobil Anda Secara Lengkap</p>
         </div>
-      </form>
-    </div>
-  </section>
-  <!-- end form -->
-
-  <!-- start list mobil-->
-  <section id="mobil">
-    <div class="container my-5">
-      <h3 class="fw-bold mb-4">Mobil Tersedia</h3>
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-4 col-6">
-          <div class="card shadow-sm h-100 rounded-top">
-            <div
-              class="ratio ratio-4x3 bg-light d-flex align-items-center justify-content-center text-dark rounded-top "
-              style="font-weight: 500;">
-              Gambar Mobil
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="brand" class="form-label fw-medium">Brand*</label>
+                <select name="brand" id="brand" class="form-control py-2 border-0">
+                  <option value="">Ketik Atau Pilih</option>
+                </select>
+              </div>
             </div>
-            <div class="card-body">
-              <h6 class="card-title fw-bold">Toyota Calya G AT 2020 Silver</h6>
-              <p class="mb-2" style="font-size: 14px;">2020 | 50.000 km | Automatic</p>
-              <p class="fw-bold mb-0">Rp 100.000.000</p>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="model" class="form-label fw-medium">Model*</label>
+                <select name="model" id="model" class="form-control py-2 border-0">
+                  <option value="">Ketik Atau Pilih</option>
+                </select>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-4 col-6">
-          <div class="card shadow-sm h-100 rounded-top">
-            <div class="ratio ratio-4x3 bg-light d-flex align-items-center justify-content-center text-dark rounded-top"
-              style="font-weight: 500;">
-              Gambar Mobil
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="tahun" class="form-label fw-medium ">Tahun*</label>
+                <select name="tahun" id="tahun" class="form-control py-2 border-0">
+                  <option value="">Ketik Atau Pilih</option>
+                </select>
+              </div>
             </div>
-            <div class="card-body">
-              <h6 class="card-title fw-bold">Toyota Calya G AT 2020 Silver</h6>
-              <p class="mb-2" style="font-size: 14px;">2020 | 50.000 km | Automatic</p>
-              <p class="fw-bold mb-0">Rp 100.000.000</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-4 col-6">
-          <div class="card shadow-sm h-100 rounded-top">
-            <div class="ratio ratio-4x3 bg-light d-flex align-items-center justify-content-center text-dark rounded-top"
-              style="font-weight: 500;">
-              Gambar Mobil
-            </div>
-            <div class="card-body">
-              <h6 class="card-title fw-bold">Toyota Calya G AT 2020 Silver</h6>
-              <p class="mb-2" style="font-size: 14px;">2020 | 50.000 km | Automatic</p>
-              <p class="fw-bold mb-0">Rp 100.000.000</p>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="jarakTempuh" class="form-label fw-medium">Jarak Tempuh (KM)*</label>
+                <input type="number" class="form-control py-2 border-0" id="jarakTempuh" placeholder="Ketik">
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="row d-flex align-items-start mt-5">
+        <div class="col-md-6 " style="font-size: 20px;">
+          <p class="fw-semibold mb-2">Detail Inspeksi</p>
+          <p class="text-muted">Isi Lokasi dan Tanggal Inspeksi untuk Validasi Kondisi Kendaraan Anda</p>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="brand" class="form-label fw-medium">Lokasi Inspeksi*</label>
+                <select name="brand" id="brand" class="form-control py-2 border-0">
+                  <option value="">Ketik Atau Pilih</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="tanggalInspeksi" class="form-label fw-medium">Tanggal Inspeksi*</label>
+                <input type="date" name="tanggal" class="form-control py-2 border-0" id="tanggalInspeksi"
+                  placeholder="Ketik">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="justify-content-end d-flex mt-3">
+        <button type="submit" class="btn btn-submit col-12 col-md-3">Submit</button>
+      </div>
     </div>
-
   </section>
-  <!-- end list mobil -->
+  <!-- end formJualMobil -->
+
+  <!-- start tutorial -->
+  <section id="tutorial" class="py-5 mt-5">
+    <div class="container text-center">
+      <h3 class="fw-bold mb-5">Proses Beli Mobil</h3>
+      <div class="row g-3">
+
+        <!-- STEP 1 -->
+        <div class="col-3">
+          <div class="border rounded-3 h-100">
+            <div class="py-1 py-md-3 border-bottom d-flex align-items-center justify-content-between px-3 step-header">
+              <span class="step-text">STEP</span>
+              <span class="number">01</span>
+            </div>
+            <div class="step-body py-2 py-md-4">
+              <img src="Isi Data Mobil.svg" alt="DP" class="step-icon mb-3">
+              <p class="fw-medium step-text mb-0">Isi Data Mobil & isi detail inspeksi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="col-3">
+          <div class="border rounded-3 h-100">
+            <div class="py-1 py-md-3 border-bottom d-flex align-items-center justify-content-between px-3 step-header">
+              <span class="step-text">STEP</span>
+              <span class="number">02</span>
+            </div>
+            <div class="step-body py-2 py-md-4">
+              <img src="VERIFIKASI.svg" alt="Verifikasi & Konfirmasi Jadwal" class="step-icon mb-3">
+              <p class="fw-medium step-text mb-0">Verifikasi & Konfirmasi Jadwal</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="col-3">
+          <div class="border rounded-3 h-100">
+            <div class="py-1 py-md-3 border-bottom d-flex align-items-center justify-content-between px-3 step-header">
+              <span class="step-text">STEP</span>
+              <span class="number">03</span>
+            </div>
+            <div class="step-body py-2 py-md-4">
+              <img src="Inspeksi.svg" alt="Proses Inspeksi Mobi" class="step-icon mb-3">
+              <p class="fw-medium step-text mb-0">Proses Inspeksi Mobil</p>
+            </div>
+          </div>
+        </div>
+        <!-- STEP 4 -->
+        <div class="col-3">
+          <div class="border rounded-3 h-100">
+            <div class="py-1 py-md-3 border-bottom d-flex align-items-center justify-content-between px-3 step-header">
+              <span class="step-text">STEP</span>
+              <span class="number">04</span>
+            </div>
+            <div class="step-body py-2 py-md-4">
+              <img src="Konfirmasi.svg" alt="Konfirmasi dan Terima Penawaran" class="step-icon mb-3">
+              <p class="fw-medium step-text mb-0">Konfirmasi dan Terima Penawaran</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end tutorial -->
 
   <!-- start testimonial -->
   <section id="testimonial">
+
     <div class="container py-5">
       <h3 class="text-center fw-bold text-primary mb-5">Apa Kata Pelanggan Kami</h3>
       <div class="row g-4 justify-content-center">
@@ -401,90 +503,6 @@
   </section>
   <!-- end testimonial -->
 
-  <!-- Start About -->
-  <section id="about">
-    <div class="py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Kolom Foto -->
-          <div class="col-lg-5 mb-4 mb-lg-0">
-            <div class="border rounded-3 p-5 text-center"
-              style="height: 100%; display: flex; align-items: center; justify-content: center;">
-              <span class="fw-semibold">FOTO SHOWROOM</span>
-            </div>
-          </div>
-
-          <!-- Kolom Teks -->
-          <div class="col-lg-7">
-            <h4 class="fw-bold">Pak Sridaryono - Pemilik Showroom</h4>
-            <h3 class="fw-bold mb-4 text-uppercase">YONOMOBILINDO</h3>
-            <p class="text-muted">
-              Dengan pengalaman lebih dari 15 tahun di dunia otomotif, saya berkomitmen untuk menyediakan mobil
-              berkualitas dengan harga terbaik di pasaran.
-              Setiap mobil yang ada di showroom ini telah melalui proses seleksi ketat dan pemeriksaan menyeluruh untuk
-              memastikan kondisinya benar-benar prima.
-            </p>
-            <p class="text-muted">
-              Kepuasan pelanggan adalah prioritas utama kami. Kami sangat terbuka dalam memberikan informasi tentang
-              kondisi mobil secara detail dan jujur.
-              Kami juga menyediakan layanan purna jual dan garansi untuk memberikan rasa aman dan nyaman bagi para
-              pelanggan.
-            </p>
-
-            <!-- Statistik -->
-            <div class="row text-center mt-4">
-              <div class="col-4">
-                <h4 class="fw-bold">150+</h4>
-                <p class="mb-0">Mobil Terjual</p>
-              </div>
-              <div class="col-4">
-                <h4 class="fw-bold">98%</h4>
-                <p class="mb-0">Pelanggan Puas</p>
-              </div>
-              <div class="col-4">
-                <h4 class="fw-bold">15+</h4>
-                <p class="mb-0">Tahun Pengalaman</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <!-- End About -->
-
-  <!-- start form request Mobil -->
-  <section id="reqCar">
-    <div class="py-5">
-      <div class="container">
-        <div class="mx-auto p-5 shadow rounded-3 bg-white" style="max-width: 900px;">
-          <h3 class="fw-bold text-center mb-2">Belum Ketemu Mobilnya? Kami Bantu Cari!</h3>
-          <p class="text-center text-muted mb-4">Isi detail mobil yang Anda cari, tim kami akan segera menghubungi Anda.
-          </p>
-
-          <form>
-            <div class="mb-3">
-              <label for="carRequest" class="form-label fw-semibold">Merek, Mobil, Tahun<span
-                  class="text-danger">*</span></label>
-              <input type="text" id="carRequest" class="form-control form-control-lg shadow-sm border-dark"
-                placeholder="Cth. Daihatsu Xenia 2024" required>
-            </div>
-
-            <div class="text-end">
-              <button type="submit" class="btn px-4 py-2 fw-bold text-primary" style="background-color: var(--yellow);">
-                Beritahu saya
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <!-- end form request Mobil -->
-
-  <!-- start footer -->
   <section id="footer">
     <footer class="py-5 text-white">
       <div class="container">
@@ -509,7 +527,8 @@
                   </div>
                   <div>
                     <p class="mb-1 fw-semibold text-white">Lokasi</p>
-                    <p class="mb-0 text-white-50">Pekapuran Jl 1000 RT 06/05 NO 200 SUKAMAJU BARU TAPOS, DEPOK</p>
+                    <p class="mb-0 text-white-50">Pekapuran Jl 1000 RT 06/05 NO 200 SUKAMAJU BARU
+                      TAPOS, DEPOK</p>
                   </div>
                 </div>
 
@@ -530,33 +549,27 @@
               <div class="col-md-4 mt-4">
                 <h6 class="fw-semibold text-white">Lainnya</h6>
                 <ul class="list-unstyled mt-3 ">
-                  <li class="mb-2 text-white-50"><i class="fas fa-car-side me-2 text-white-50"></i> Beli Mobil</li>
-                  <li class="mb-2 text-white-50"><i class="fas fa-car me-2 text-white-50"></i> Jual Mobil</li>
-                  <li class="mb-2 text-white-50"><i class="fas fa-comments me-2 text-white-50"></i> Testimoni</li>
-                  <li class=" text-white-50"><i class="fas fa-phone me-2 text-white-50"></i> Kontak</li>
+                  <li class="mb-2 text-white-50"><i class="fas fa-car-side me-2 text-white-50"></i>
+                    Beli Mobil</li>
+                  <li class="mb-2 text-white-50"><i class="fas fa-car me-2 text-white-50"></i> Jual
+                    Mobil</li>
+                  <li class="mb-2 text-white-50"><i class="fas fa-comments me-2 text-white-50"></i>
+                    Testimoni</li>
+                  <li class=" text-white-50"><i class="fas fa-phone me-2 text-white-50"></i> Kontak
+                  </li>
                 </ul>
 
               </div>
             </div>
           </div>
-
-          <!-- Link Navigasi -->
-          <!-- <div class="col-md-3 ">
-            <h6 class="fw-semibold text-white">Lainnya</h6>
-            <ul class="list-unstyled mt-3 ">
-              <li class="mb-2 text-white-50"><i class="fas fa-car-side me-2 text-white-50"></i> Beli Mobil</li>
-              <li class="mb-2 text-white-50"><i class="fas fa-car me-2 text-white-50"></i> Jual Mobil</li>
-              <li class="mb-2 text-white-50"><i class="fas fa-comments me-2 text-white-50"></i> Testimoni</li>
-              <li class=" text-white-50"><i class="fas fa-phone me-2 text-white-50"></i> Kontak</li>
-            </ul>
-          </div> -->
         </div>
       </div>
     </footer>
 
   </section>
-  <!-- end footer -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
